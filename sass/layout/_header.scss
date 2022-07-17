@@ -1,6 +1,10 @@
 @use "../abstracts" as * ;
 
-header {
-    @include flex;
+.header {
+    @include flex(row ,center ,center );
     height: 4rem;
+    &__logo {
+        width: 50%;
+        height: 50%;
+    }
 }
