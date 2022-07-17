@@ -1,1 +1,14 @@
-@use '../abstracts/' as *;
+@use '../abstracts/variables' as * ;
+
+@mixin flex($direction: row,$justify: center,$align: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin search-font($font: $text-font,$fontcolor: rgb(77, 77, 77),$fontweight: 600) {
+    font-family: $font;
+    color: $fontcolor;
+    font-weight: $fontweight;
+}

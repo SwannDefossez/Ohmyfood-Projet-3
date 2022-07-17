@@ -1,0 +1,10 @@
+@use "../abstracts" as *;
+
+
+h1 {
+    font-family: $logo-font;
+}
+
+::placeholder {
+    @include search-font ;
+}
