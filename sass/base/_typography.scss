@@ -1,5 +1,11 @@
 @use "../abstracts" as *;
 
+
+a {
+    text-decoration: none;
+    color: #000000
+}
+
 h1 {
     @include h1-font;
 }
@@ -20,4 +26,19 @@ h2 {
     color: #ffffff;
     font-family: Arial;
     font-size: 17px;
+}
+
+h3 {
+    font-family: $text-font;
+}
+
+h4 {
+    font-family: $text-font;
+    color: white;
+    font-weight: 400;
+}
+
+.fas {
+    font-size: 20px;
+    color: #868686;
 }

@@ -26,8 +26,8 @@
 
     &__reservation {
 
-        @include flex(column, center ,center) ;
-        background-color: #f5f5f5;
+        @include flex(column, center, center);
+        background-color: $color-button;
         height: 20rem;
         padding: 5.5%;
         gap: 0%;
@@ -57,4 +57,48 @@
     }
 
 
+
+
+}
+
+.fonctionnement {
+    @include flex(column, center, flex-start);
+    margin: 6%;
+    margin-top: 10%;
+
+    &__buttonsdiv {
+        @include flex(column, center , space-around);
+        width: 100%;
+
+        &__link {
+            display: block;
+            background-color: #ff79d9;
+            width: 100%;
+            &__button {
+                @include flex(row, flex-start, center);
+                margin-top: 7%;
+                background-color: $color-button;
+                height: 80px;
+                width: 100%;
+                gap: 7%;
+                border-radius: 20px;
+                box-shadow: 1px 5px 15px -5px rgba(0, 0, 0, 0.45);
+                &:hover {
+                    background-color: #f8ecff;
+                    &:hover > .fas {
+                        color: $color-primary;
+                    }
+                }
+
+                &__number {
+                    @include flex(row, center, center);
+                    margin-left: -3%;
+                    height: 28px;
+                    width: 28px;
+                    border-radius: 50%;
+                    background-color: $color-primary;
+                }
+            }
+        }
+    }
 }
