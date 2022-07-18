@@ -312,7 +312,15 @@ template {
 }
 
 h1 {
-  font-family: Shrikhand;
+  font-family: Roboto;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+h2 {
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 ::-webkit-input-placeholder {
@@ -343,6 +351,16 @@ h1 {
   font-family: Roboto;
   color: rgb(77, 77, 77);
   font-weight: 600;
+}
+
+.section-top__reservation {
+  text-align: center;
+}
+
+.section-top__reservation__button {
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
 }
 
 .header {
@@ -539,4 +557,46 @@ body {
   font-family: Roboto;
   color: rgb(77, 77, 77);
   font-weight: 600;
+}
+.section-top__reservation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f5f5f5;
+  height: 20rem;
+  padding: 5.5%;
+  gap: 0%;
+}
+.section-top__reservation__button {
+  -webkit-box-shadow: 0px 8px 34px -14px #FF79DA;
+          box-shadow: 0px 8px 34px -14px #FF79DA;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, #ff79d9), to(#b641ff));
+  background: linear-gradient(to bottom, #ff79d9 15%, #b641ff 100%);
+  background-color: #ff79d9;
+  border-radius: 42px;
+  display: inline-block;
+  cursor: pointer;
+  padding: 17px 33px;
+  text-decoration: none;
+  margin-top: 10%;
+}
+.section-top__reservation .section-top__reservation__button:hover {
+  -webkit-box-shadow: inset -24px -31px 24px -18px #df00a1;
+          box-shadow: inset -24px -31px 24px -18px #df00a1;
+  -webkit-box-shadow: 0px 8px 34px -14px #ff13be;
+          box-shadow: 0px 8px 34px -14px #ff13be;
+}
+.section-top__reservation .section-top__reservation__button:active {
+  position: relative;
+  top: 1px;
 }

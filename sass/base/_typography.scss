@@ -1,10 +1,23 @@
 @use "../abstracts" as *;
 
-
 h1 {
-    font-family: $logo-font;
+    @include h1-font;
 }
 
+h2 {
+    @include h2-font;
+}
 ::placeholder {
     @include search-font ;
+}
+
+
+.section-top__reservation {
+    text-align: center;
+}
+
+.section-top__reservation__button {
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
 }

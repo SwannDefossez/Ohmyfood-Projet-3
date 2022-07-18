@@ -12,3 +12,16 @@
     color: $fontcolor;
     font-weight: $fontweight;
 }
+
+@mixin h1-font {
+    font-family: $text-font;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+@mixin h2-font {
+    font-family: $text-font;
+    font-size: 20px;
+    font-weight: 400;
+}
+
