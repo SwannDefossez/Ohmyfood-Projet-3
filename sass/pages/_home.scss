@@ -1,4 +1,4 @@
-@use "../abstracts/" as *;
+@use "../utils/" as *;
 @use "../base/" as *;
 
 .section-top {
@@ -8,19 +8,22 @@
         height: 50px;
         background-color: rgb(237, 237, 237);
         box-shadow: inset 0px 4px 3px rgba(50, 50, 50, 0.15);
-
-        &__icon {
-            margin-left: 10%;
+        gap: 5%;
+        @include xl {
+            gap: 1%;
         }
-
-        &__input {
-
-            margin-left: 8%;
-            border: none;
-            background-color: transparent;
-            outline: none;
-            width: 70%;
-            @include search-font;
+        &__div {
+            @include flex(row, center, center);
+            &__input {
+                width: 8.2rem;
+                border: none;
+                background-color: transparent;
+                outline: none;
+                @include search-font;
+                @include md {
+                    width: 10rem
+                }
+            }
         }
     }
 
@@ -29,9 +32,12 @@
         @include flex(column, center, center);
         background-color: $color-button;
         height: 20rem;
-        padding: 5.5%;
-        gap: 0%;
-
+        padding-top: 5%;
+        padding-bottom: 5%;
+        gap: 10%;
+        @include xl {
+            padding-top: 6%;
+        }
         &__button {
 
             box-shadow: 0px 8px 34px -14px $color-secondary;
@@ -42,7 +48,8 @@
             cursor: pointer;
             padding: 17px 33px;
             text-decoration: none;
-            margin-top: 10%;
+            margin-top: 3%;
+            margin-bottom: 3%;
         }
 
         .section-top__reservation__button:hover {
@@ -65,15 +72,23 @@
     @include flex(column, center, flex-start);
     margin: 6%;
     margin-top: 10%;
+    @include xl {
+        @include flex(column, center, center);
+        margin-top: 2%;
+    }
+
 
     &__buttonsdiv {
-        @include flex(column, center , space-around);
+        @include flex(column, center, space-around);
         width: 100%;
-
+        @include xl {
+            width: 50%;
+        }
         &__link {
             display: block;
             background-color: #ff79d9;
             width: 100%;
+
             &__button {
                 @include flex(row, flex-start, center);
                 margin-top: 7%;
@@ -82,23 +97,113 @@
                 width: 100%;
                 gap: 7%;
                 border-radius: 20px;
-                box-shadow: 1px 5px 15px -5px rgba(0, 0, 0, 0.45);
+                box-shadow: $boxshadow;
+
                 &:hover {
                     background-color: #f8ecff;
-                    &:hover > .fas {
+
+                    &:hover>.fas {
                         color: $color-primary;
                     }
                 }
 
                 &__number {
                     @include flex(row, center, center);
-                    margin-left: -3%;
+                    margin-left: -4%;
                     height: 28px;
                     width: 28px;
                     border-radius: 50%;
                     background-color: $color-primary;
+                    @include xl {
+                        margin-left: -1.8%;
+                    }
                 }
             }
+        }
+    }
+}
+
+
+.restaurant {
+    margin-top: 15%;
+    background-color: $color-button;
+    padding: 5%;
+    @include lg {
+        padding: 2%;
+    }
+    @include xl {
+        margin-top: 0%;
+    }
+    &__title {
+        margin-top: 10%;
+        @include md {
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        @include lg {
+            margin-top: 5%;
+        }
+    }
+
+    &__bloc {
+        @include lg {
+            @include flex(row,center,center);
+            flex-wrap: wrap;
+        }
+        &__carte {
+            display: block;
+            background-color: white;
+            border-radius: 20px;
+            margin-bottom: 6%;
+            box-shadow: $boxshadow;
+            @include lg {
+                width: 45%;
+                margin: 2%;
+            }
+            &__image {
+                @include flex(row, flex-start, center);
+                &__resize {
+                    height: 200px;
+                    width: 100%;
+                    object-fit: cover;
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+                    @include md {
+                        height: 300px;
+                        object-fit: cover;
+                    }
+                }
+
+                &__nouveau {
+                    position: absolute;
+                    @include flex(row, center, center);
+                    background-color: $color-tertiary;
+                    height: 30px;
+                    width: 25%;
+                    margin-left: 60%;
+                    margin-bottom: 7rem;
+                    @include md {
+                        margin-bottom: 14rem;
+                    }
+                    @include lg {
+                        margin-left: 13%;
+                        width: 15%;
+                    }
+                }
+            }
+
+            &__content {
+                @include flex(row, space-between, center);
+                padding: 5%;
+
+                &__heart {
+                    &__fill {
+                        position: absolute;
+                    }
+                }
+
+            }
+
         }
     }
 }

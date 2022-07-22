@@ -1,0 +1,32 @@
+@use '../utils/' as * ;
+
+.footer {
+    background-color: #3a3939;
+    &__content {
+      padding: 6%;
+      @include xl {
+        padding: 2%;
+      }
+      &__list {
+        margin-top: 5%;
+        @include xl {
+            margin-top: 2%;
+        }
+        &__choice {
+            margin-bottom: 3%;
+            @include xl {
+                margin-bottom: 1%;
+            }
+            &:hover > a {
+                color: #afafaf;
+            }
+            &__delimitation {
+                @include flex(row,flex-start,center);
+                &:hover > #icon , &:hover > p {
+                    color: #afafaf;
+                }
+            }
+        }
+      }
+    }
+}

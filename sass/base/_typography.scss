@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use "../utils" as *;
 
 
 a {
@@ -15,6 +15,9 @@ h2 {
 }
 ::placeholder {
     @include search-font ;
+    @include md {
+        font-size: 18px;
+    }
 }
 
 
@@ -38,7 +41,61 @@ h4 {
     font-weight: 400;
 }
 
+h5 {
+    font-family: $text-font;
+    font-size: 16px;
+    color: darken($color-tertiary,30%)
+}
+
 .fas {
     font-size: 20px;
     color: #868686;
 }
+
+.far {
+    font-size: 30px;
+}
+
+.restaurant__bloc__carte__content__heart__fill {
+    font-size: 30px;
+    opacity: 0;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(to bottom, $color-primary 0%, $color-secondary 100%);
+    &:hover {
+        @include heart-animation;
+    }
+}
+.restaurant__bloc__carte__content__text h2 {
+    font-weight: bold;
+}
+
+.restaurant__bloc__carte__content__text h3 {
+    font-weight: 300;
+}
+
+.footer h2 {
+    color: white;
+    font-family: $logo-font;
+    font-size: 18px;
+}
+.footer li ,footer a {
+    list-style-type:none;
+    color: white;
+    font-family: $text-font;
+    font-size: 15px;
+}
+
+.fa-utensils , .fa-hands-helping {
+    color: white;
+    font-size: 10px;
+}
+.fa-utensils {
+    margin-right: 4%;
+}
+.fa-hands-helping {
+    margin-right: 3%;
+}
+
+
+

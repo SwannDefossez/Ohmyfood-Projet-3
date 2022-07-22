@@ -1,10 +1,18 @@
-@use "../abstracts" as * ;
+@use "../utils/" as * ;
+
 
 .header {
     @include flex(row ,center ,center );
     height: 4rem;
     &__logo {
-        width: 50%;
-        height: 50%;
+        display: block;
+        width: 45%;
+        height: auto;
+        @include md {
+            width: 30%;
+        }
+        @include lg {
+            width: 15%;
+        }
     }
 }
