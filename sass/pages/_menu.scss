@@ -22,6 +22,9 @@
         @include flex (row, space-between, center);
         gap: 2rem;
         margin-top: 1rem;
+        @include md {
+            @include flex (row, space-around, center); 
+        }
     }
 
     &__texte {
@@ -38,6 +41,7 @@
     }
     &__part {
         margin-top: 2rem;
+       
     }
     &__commander {
         @include flex(row,center,center);
@@ -48,7 +52,15 @@
     &__button {
         @include primary-button;
         @include flex(row,center,center);
-        width: 50%;
+        width: 15rem;
+    }
+
+    &__bloc {
+        @include lg {
+            @include flex(row,center,normal);
+            gap: 2%;
+            flex-wrap: wrap;
+        }
     }
 }
 
@@ -60,30 +72,42 @@
     box-shadow: $boxshadow;
     @include menu-animation;
     overflow: hidden;
-    transition: margin-right 1s;
+    height: 5rem;
+    @include md {
+        height: 5rem;
+    }
+    @include lg {
+        width: 30rem;
+    }
+    &:hover  .card__icone {
+       
+        @include validation-anim;
+    }
+
+    &:hover  .card__validation {
+
+        @include check-appear;
+    }
+    
     &__food {
-        padding: 4%;
+        padding: 1rem;
         white-space: nowrap;
         overflow: hidden;
         width: 80%;
+        @include md {
+            padding: 1rem;
+        }
     }
     &__description , &__title {
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
     }
-    &:hover .card__icone {
-        @include validation-anim;
-    }
-    &:hover .card__validation {
-        @include check-appear;
-    }
     
     &__price {
         margin-left: auto;
-        margin-top: auto;
         margin-right: 1rem;
-        padding: 4%
+        padding: 3rem;
     }
 
     &__validation {
@@ -100,6 +124,6 @@
     }
     &__icone {
         @include flex(row, center, center);
-        height: 100%;
+    
     }
 }

@@ -637,7 +637,7 @@ body {
           align-items: center;
 }
 .preloader__logo {
-  width: 80%;
+  width: 20rem;
   -webkit-animation: colorfading 2s infinite;
           animation: colorfading 2s infinite;
 }
@@ -1040,6 +1040,22 @@ body {
   gap: 2rem;
   margin-top: 1rem;
 }
+@media (min-width: 768px) {
+  .menu__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 .menu__texte {
   margin-left: 0.5rem;
 }
@@ -1097,7 +1113,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 50%;
+  width: 15rem;
 }
 .menu__button:hover {
   -webkit-box-shadow: inset -24px -31px 24px -18px #df00a1;
@@ -1108,6 +1124,26 @@ body {
 .menu__button:active {
   position: relative;
   top: 1px;
+}
+@media (min-width: 1024px) {
+  .menu__bloc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
+    gap: 2%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 .card {
@@ -1122,8 +1158,7 @@ body {
   -webkit-animation: menu-appear 1s;
           animation: menu-appear 1s;
   overflow: hidden;
-  -webkit-transition: margin-right 1s;
-  transition: margin-right 1s;
+  height: 5rem;
 }
 .card:nth-child(1) {
   -webkit-animation-delay: 100ms;
@@ -1189,37 +1224,44 @@ body {
             transform: scale(1);
   }
 }
-.card__food {
-  padding: 4%;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 80%;
+@media (min-width: 768px) {
+  .card {
+    height: 5rem;
+  }
 }
-.card__description, .card__title {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+@media (min-width: 1024px) {
+  .card {
+    width: 30rem;
+  }
 }
 .card:hover .card__icone {
-  -webkit-animation: spin 1s ease forwards;
-          animation: spin 1s ease forwards;
+  -webkit-animation: spin 1s ease;
+          animation: spin 1s ease;
 }
 @-webkit-keyframes spin {
   0% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
     -webkit-transform: rotate(-250deg);
             transform: rotate(-250deg);
   }
   100% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
 }
 @keyframes spin {
   0% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
     -webkit-transform: rotate(-250deg);
             transform: rotate(-250deg);
   }
   100% {
+    -webkit-transform-origin: center;
+            transform-origin: center;
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
@@ -1238,11 +1280,26 @@ body {
     margin: 0;
   }
 }
+.card__food {
+  padding: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 80%;
+}
+@media (min-width: 768px) {
+  .card__food {
+    padding: 1rem;
+  }
+}
+.card__description, .card__title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 .card__price {
   margin-left: auto;
-  margin-top: auto;
   margin-right: 1rem;
-  padding: 4%;
+  padding: 3rem;
 }
 .card__validation {
   display: -webkit-box;
@@ -1284,5 +1341,4 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
 }

@@ -27,7 +27,7 @@ body {
         @include flex(row, center, center);
     }
     &__logo {
-        width: 80%;
+        width: 20rem;
         animation: colorfading 2s infinite;
     }
 
