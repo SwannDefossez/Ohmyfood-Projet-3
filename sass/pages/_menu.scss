@@ -1,0 +1,105 @@
+@use '../utils/' as *;
+@use "../components/" as * ;
+
+.main {
+    &__image {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+}
+
+.menu {
+    z-index: 98;
+    background-color: $color-button;
+    padding: 1rem;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-top: -3rem;
+    position: relative;
+    &__title {
+        @include flex (row, space-between, center);
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    &__texte {
+        margin-left: 0.5rem;
+    }
+
+    &__barre {
+        margin-left: 0.5rem;
+        height: 3px;
+        width: 14%;
+        background-color: $color-tertiary;
+        margin-bottom: 1rem;
+        margin-top: 0.1rem;
+    }
+    &__part {
+        margin-top: 2rem;
+    }
+    &__commander {
+        @include flex(row,center,center);
+        margin-top:3rem;
+        margin-bottom: 0rem;
+
+    }
+    &__button {
+        @include primary-button;
+        @include flex(row,center,center);
+        width: 50%;
+    }
+}
+
+.card {
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    box-shadow: $boxshadow;
+    @include menu-animation;
+    overflow: hidden;
+    transition: margin-right 1s;
+    &__food {
+        padding: 4%;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 80%;
+    }
+    &__description , &__title {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    &:hover .card__icone {
+        @include validation-anim;
+    }
+    &:hover .card__validation {
+        @include check-appear;
+    }
+    
+    &__price {
+        margin-left: auto;
+        margin-top: auto;
+        margin-right: 1rem;
+        padding: 4%
+    }
+
+    &__validation {
+        @include flex(row, center, center);
+        background-color: $color-tertiary;
+        width: 6rem;
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+        margin-right: -6rem;
+        @include md {
+            width: 7rem;
+            margin-right: -7rem
+        }
+    }
+    &__icone {
+        @include flex(row, center, center);
+        height: 100%;
+    }
+}

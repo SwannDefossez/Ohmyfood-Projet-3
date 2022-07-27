@@ -12,32 +12,17 @@ h1 {
 
 h2 {
     @include h2-font;
-}
-::placeholder {
-    @include search-font ;
-    @include md {
-        font-size: 18px;
-    }
-}
-
-
-.section-top__reservation {
-    text-align: center;
-}
-
-.section-top__reservation__button {
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 17px;
+    font-weight: bold;
 }
 
 h3 {
     font-family: $text-font;
+    font-weight: 300;
 }
 
 h4 {
     font-family: $text-font;
-    color: white;
+    color: black;
     font-weight: 400;
 }
 
@@ -45,6 +30,11 @@ h5 {
     font-family: $text-font;
     font-size: 16px;
     color: darken($color-tertiary,30%)
+}
+
+h6 {
+    font-family: $text-font;
+    font-size: 16px;
 }
 
 .fas {
@@ -56,7 +46,36 @@ h5 {
     font-size: 30px;
 }
 
-.restaurant__bloc__carte__content__heart__fill {
+::placeholder , .search__input {
+    @include search-font ;
+    @include md {
+        font-size: 18px;
+    }
+}
+
+
+.reservation__button {
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+}
+
+
+
+.fonctionnement__h3 {
+    font-weight: bold;
+}
+.fonctionnement__h4 {
+    color: #ffffff;
+}
+
+
+
+.carte__h3 {
+    font-size: 17px;
+}
+
+.carte__heart--fill {
     font-size: 30px;
     opacity: 0;
     color: transparent;
@@ -66,19 +85,14 @@ h5 {
         @include heart-animation;
     }
 }
-.restaurant__bloc__carte__content__text h2 {
-    font-weight: bold;
-}
-
-.restaurant__bloc__carte__content__text h3 {
-    font-weight: 300;
-}
 
 .footer h2 {
     color: white;
     font-family: $logo-font;
     font-size: 18px;
+    font-weight: 200;
 }
+
 .footer li ,footer a {
     list-style-type:none;
     color: white;
@@ -86,16 +100,31 @@ h5 {
     font-size: 15px;
 }
 
+
 .fa-utensils , .fa-hands-helping {
     color: white;
     font-size: 10px;
 }
-.fa-utensils {
-    margin-right: 4%;
+
+.fa-arrow-left {
+    color: #3d3d3d;
+    font-size: 25px;
 }
-.fa-hands-helping {
-    margin-right: 3%;
+
+.menu h1 {
+    font-family: $logo-font;
+    font-size: 30px;
+    font-weight: 500;
+}
+.main h2 {
+    font-size: 18px;
 }
 
+.carte__food h3 {
+    font-size: 17px;
+}
 
-
+.fa-check-circle {
+    color: white;
+    font-size: 25px;
+}

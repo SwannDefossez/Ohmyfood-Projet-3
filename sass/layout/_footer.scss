@@ -1,32 +1,48 @@
-@use '../utils/' as * ;
+@use '../utils/' as *;
+@use '../base/' as * ;
+
 
 .footer {
     background-color: #3a3939;
+
     &__content {
-      padding: 6%;
-      @include xl {
-        padding: 2%;
-      }
-      &__list {
+        padding: 6%;
+
+        @include xl {
+            padding: 2%;
+        }
+    }
+
+    &__list {
         margin-top: 5%;
+
         @include xl {
             margin-top: 2%;
         }
-        &__choice {
-            margin-bottom: 3%;
-            @include xl {
-                margin-bottom: 1%;
-            }
-            &:hover > a {
-                color: #afafaf;
-            }
-            &__delimitation {
-                @include flex(row,flex-start,center);
-                &:hover > #icon , &:hover > p {
-                    color: #afafaf;
-                }
-            }
+    }
+
+    &__choice {
+        margin-bottom: 3%;
+
+        @include xl {
+            margin-bottom: 1%;
         }
-      }
+
+        &:hover>a {
+            color: #afafaf;
+        }
+    }
+
+    &__delimitation {
+        @include flex(row, flex-start, center);
+
+        &:hover>#icon,
+        &:hover>p {
+            color: #afafaf;
+        }
+    }
+    &__icon {
+        width: 1.5rem;
+        font-size: 12px;
     }
 }
