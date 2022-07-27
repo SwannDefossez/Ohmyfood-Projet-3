@@ -4,7 +4,9 @@
 .header {
     @include flex(row, flex-start, center);
     height: 4rem;
-
+    &--margin {
+        margin-right: 7rem;
+    }
     &__arrow {
         margin-left: 5%;
         &:hover > .fa-arrow-left {

@@ -561,6 +561,9 @@ h6 {
           align-items: center;
   height: 4rem;
 }
+.header--margin {
+  margin-right: 7rem;
+}
 .header__arrow {
   margin-left: 5%;
 }
