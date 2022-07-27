@@ -1,0 +1,67 @@
+@use '../utils/' as *;
+
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+}
+
+.preloader {
+    position: fixed;
+    background: #f1f1f1;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    @include flex(column, center, center);
+    animation: fadeout 2s forwards;
+    z-index: 1;
+    opacity: 0;
+    &__bas {
+        @include flex(row, center, center);
+    }
+    &__logo {
+        width: 20rem;
+        animation: colorfading 2s infinite;
+    }
+
+}
+
+@keyframes fadeout {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes colorfading {
+
+    0%,
+    20% {
+        filter: invert(61%) sepia(80%) saturate(5789%) hue-rotate(243deg) brightness(91%) contrast(88%);
+    }
+
+    50% {
+        filter: invert(73%) sepia(9%) saturate(7413%) hue-rotate(283deg) brightness(102%) contrast(101%);
+    }
+
+    100% {
+        filter: invert(91%) sepia(9%) saturate(1073%) hue-rotate(108deg) brightness(93%) contrast(91%);
+    }
+}
