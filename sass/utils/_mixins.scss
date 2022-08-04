@@ -1,10 +1,19 @@
 @use '../utils/variables' as * ;
 
 @mixin flex($direction: row,$justify: center,$align: flex-start) {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: $direction;
+            flex-direction: $direction;
+    -webkit-box-pack: $justify;
+        -ms-flex-pack: $justify;
+            justify-content: $justify;
+    -webkit-box-align: $align;
+        -ms-flex-align: $align;
+            align-items: $align;
 }
 
 @mixin search-font($font: $text-font,$fontcolor: rgb(77, 77, 77),$fontweight: 600) {
@@ -26,7 +35,13 @@
 }
 
 @mixin heart-animation {
-    animation: anim 0.3s ease-in-out 0s 1 normal forwards;
+    -webkit-animation: anim 0.3s ease-in-out 0s 1 normal forwards;
+            animation: anim 0.3s ease-in-out 0s 1 normal forwards;
+    @-webkit-keyframes anim {
+        100% {
+           opacity: 1;
+        }
+    }
     @keyframes anim {
         100% {
            opacity: 1;
@@ -37,39 +52,83 @@
 @mixin menu-animation {
     @for $i from 1 through 10 {
         &:nth-child(#{$i}) {
-            animation-delay: 100ms*$i;
+            -webkit-animation-delay: 100ms*$i;
+                    animation-delay: 100ms*$i;
         }
     }
-    animation: menu-appear 1s;
-    @keyframes menu-appear {
+    
+    -webkit-animation: menu-appear 1s;
+    
+            animation: menu-appear 1s forwards;
+    @-webkit-keyframes menu-appear {
         0% {
             opacity: 0;
-            transform: scale(0);
+            -webkit-transform: scale(0);
+                    transform: scale(0);
         }
  
         100% {
             opacity: 1;
-            transform: scale(1);
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+        }
+    }
+    @keyframes menu-appear {
+        0% {
+            opacity: 0;
+            -webkit-transform: scale(0);
+                    transform: scale(0);
+        }
+ 
+        100% {
+            opacity: 1;
+            -webkit-transform: scale(1);
+                    transform: scale(1);
         }
     }
 }
 
 @mixin validation-anim {
-    animation: spin 1s ease ;
-    @keyframes spin {
+    -webkit-animation: spin 1s ease ;
+            animation: spin 1s ease ;
+    @-webkit-keyframes spin {
         0% {
-            transform-origin: center;
-            transform: rotate(-250deg);
+            -webkit-transform-origin: center;
+                    transform-origin: center;
+            -webkit-transform: rotate(-250deg);
+                    transform: rotate(-250deg);
         }
         100% {
-            transform-origin: center;
-            transform: rotate(0deg);
+            -webkit-transform-origin: center;
+                    transform-origin: center;
+            -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+        }
+    }
+    @keyframes spin {
+        0% {
+            -webkit-transform-origin: center;
+                    transform-origin: center;
+            -webkit-transform: rotate(-250deg);
+                    transform: rotate(-250deg);
+        }
+        100% {
+            -webkit-transform-origin: center;
+                    transform-origin: center;
+            -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
         }
     }
 }
 
 @mixin check-appear {
-    animation: appear 0.5s ease forwards ;
+    -webkit-animation: appear 0.5s ease forwards ;
+            animation: appear 0.5s ease forwards ;
+    @-webkit-keyframes appear {
+        100% {
+            margin: 0;
+        }
+    }
     @keyframes appear {
         100% {
             margin: 0;
