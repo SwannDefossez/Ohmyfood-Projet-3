@@ -23,45 +23,91 @@ body {
     animation: fadeout 2s forwards;
     z-index: 1;
     opacity: 0;
-    &__bas {
-        @include flex(row, center, center);
-    }
-    &__logo {
-        width: 20rem;
-        animation: colorfading 2s infinite;
-    }
 
 }
 
 @keyframes fadeout {
     0% {
+
         transform: scale(1);
         opacity: 1;
     }
 
     90% {
         opacity: 1;
+
         transform: scale(1);
     }
 
     100% {
+
         transform: scale(0);
         opacity: 0;
     }
 }
 
-@keyframes colorfading {
+.loader {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 1s linear infinite
+  }
+  .loader::before , .loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid $color-primary ;
+    animation: prixClipFix 2s linear infinite ;
+  }
+  .loader::after{
+    inset: 8px;
+    transform: rotate3d(90, 90, 0, 180deg );
+    border-color: $color-tertiary;
+  }
 
-    0%,
-    20% {
-        filter: invert(61%) sepia(80%) saturate(5789%) hue-rotate(243deg) brightness(91%) contrast(88%);
-    }
+  @keyframes rotate {
+    0%   {transform: rotate(0deg)}
+    100%   {transform: rotate(360deg)}
+  }
 
-    50% {
-        filter: invert(73%) sepia(9%) saturate(7413%) hue-rotate(283deg) brightness(102%) contrast(101%);
-    }
+  @keyframes prixClipFix {
+      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+      75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+  }
 
-    100% {
-        filter: invert(91%) sepia(9%) saturate(1073%) hue-rotate(108deg) brightness(93%) contrast(91%);
-    }
-}
+  .loader2 {
+    margin-top: -4.7rem;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+  }
+  .loader2::before , .loader2::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0px;
+    border-radius: 50%;
+    border: 5px solid $color-secondary ;
+    animation: prixClipFix 2s linear infinite ;
+  }
+  .loader2::after{
+    inset: 8px;
+    transform: rotate3d(90, 90, 0, 180deg );
+    border-color: #f1f1f1 ;
+  }
+
+  @keyframes rotate {
+    0%   {transform: rotate(0deg)}
+    100%   {transform: rotate(360deg)}
+  }
+
+  @keyframes prixClipFix {
+      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+      75%, 100%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+  }

@@ -7,10 +7,6 @@
     
     &__content {
         padding: 6%;
-        // @include lg {
-        //     text-align: center;
-        //     @include flex(column,center,center)
-        // }
         @include xl {
             padding: 2%;
         }
