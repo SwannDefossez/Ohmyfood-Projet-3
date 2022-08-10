@@ -906,6 +906,7 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-top: 5rem;
   }
 }
 .fonctionnement__link {
@@ -930,6 +931,11 @@ body {
         flex-wrap: wrap;
   }
 }
+@media (min-width: 1024px) {
+  .fonctionnement__link {
+    margin-top: 2rem;
+  }
+}
 .fonctionnement__etape {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -951,6 +957,12 @@ body {
           box-shadow: 0px 5px 19px -4px rgba(0, 0, 0, 0.23);
   border-radius: 1rem;
   background-color: #f5f5f5;
+}
+.fonctionnement__etape:hover {
+  background-color: #f4eefc;
+}
+.fonctionnement__etape:hover > .fonctionnement__icon {
+  color: #9356DC;
 }
 @media (min-width: 1024px) {
   .fonctionnement__etape {
@@ -978,6 +990,7 @@ body {
   border-radius: 1rem;
 }
 .fonctionnement__icon {
+  margin-bottom: 0.2rem;
   height: 1rem;
   width: 1rem;
 }

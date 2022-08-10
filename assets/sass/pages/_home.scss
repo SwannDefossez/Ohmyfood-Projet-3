@@ -45,13 +45,18 @@
     margin-top: 2rem;
     @include md {
         @include flex(column, center, center);
+        margin-top: 5rem;
     }
     &__link {
+        
         list-style: none;
         width: 100%;
         @include md {
             @include flex(row, space-around, center);
             flex-wrap: wrap;
+        }
+        @include lg {
+            margin-top: 2rem;
         }
     }
 
@@ -63,6 +68,13 @@
         box-shadow: 0px 5px 19px -4px rgba(0, 0, 0, 0.23);
         border-radius: 1rem;
         background-color: $color-button;
+        &:hover {
+            background-color: lighten($color-primary, 36%);
+        }
+        &:hover > .fonctionnement__icon{
+            color: $color-primary;
+        }
+
         @include lg {
             padding-right: 2rem;
         }
@@ -78,6 +90,7 @@
     }
 
     &__icon {
+        margin-bottom: 0.2rem;
         height: 1rem;
         width: 1rem;
     }
