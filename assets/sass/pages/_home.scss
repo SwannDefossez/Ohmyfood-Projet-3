@@ -29,11 +29,6 @@
     height: 18rem;
     text-align: center;
     gap: 1rem;
-
-    &__h3 {
-        margin-top: -1.4rem;
-    }
-
     &__button {
         @include primary-button ;
     }
@@ -73,7 +68,7 @@
         }
     }
 
-    &__h4 {
+    &__h5 {
         @include flex(row, center, center);
         margin-left: -2.3rem;
         background: $color-primary;
@@ -95,8 +90,12 @@
     @include md {
         margin: 0;
     }
+    &__h2 {
+        margin-top: 2rem;
+    }
 }
 .bloc__carte {
+    margin-top: 1.5rem;
     @include md {
         margin-top: 2rem;
     }
@@ -110,7 +109,7 @@
     display: block;
     background-color: white;
     border-radius: 20px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     box-shadow: $boxshadow;
     @include md {
         margin-bottom: 2rem;

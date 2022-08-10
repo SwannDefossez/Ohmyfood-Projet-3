@@ -1,16 +1,14 @@
 @use '../utils/' as *;
-@use "../components/" as * ;
+@use "../components/" as *;
 
 .main {
     &__image {
         height: 300px;
         width: 100%;
-        -o-object-fit: cover;
-           object-fit: cover;
+        object-fit: cover;
         z-index: 1;
     }
 }
-
 .menu {
     z-index: 98;
     background-color: $color-button;
@@ -23,8 +21,9 @@
         @include flex (row, space-between, center);
         gap: 2rem;
         margin-top: 1rem;
+
         @include md {
-            @include flex (row, space-around, center); 
+            @include flex (row, space-around, center);
         }
     }
 
@@ -40,61 +39,53 @@
         margin-bottom: 1rem;
         margin-top: 0.1rem;
     }
+
     &__part {
         margin-top: 2rem;
-       
+
     }
+
     &__commander {
-        @include flex(row,center,center);
-        margin-top:3rem;
+        @include flex(row, center, center);
+        margin-top: 3rem;
         margin-bottom: 0rem;
 
     }
+
     &__button {
         @include primary-button;
-        @include flex(row,center,center);
+        @include flex(row, center, center);
         width: 15rem;
     }
 
     &__bloc {
         @include lg {
-            @include flex(row,center,normal);
+            @include flex(row, center, normal);
             gap: 2%;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
+            flex-wrap: wrap;
         }
     }
 }
 
 .card {
     opacity: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     background-color: white;
     border-radius: 20px;
     margin-bottom: 1rem;
-    -webkit-box-shadow: $boxshadow;
-            box-shadow: $boxshadow;
+    box-shadow: $boxshadow;
     @include menu-animation;
     overflow: hidden;
-    height: 5rem;
-    @include md {
-        height: 5rem;
-    }
+    height: 4.5rem;
     @include lg {
         width: 30rem;
     }
-    &:hover  .card__icone {
-       
+    &:hover .card__icone {
         @include validation-anim;
     }
-
-    &:hover  .card__validation {
-
+    &:hover .card__validation {
         @include check-appear;
     }
-    
     &__food {
         padding: 1rem;
         white-space: nowrap;
@@ -104,15 +95,18 @@
             padding: 1rem;
         }
     }
-    &__description , &__title {
+    &__description,
+    &__title {
         white-space: nowrap;
-        -o-text-overflow: ellipsis;
-           text-overflow: ellipsis;
+        text-overflow: ellipsis;
         overflow: hidden;
     }
-    
+    &__description {
+        margin-top: 0.2rem;
+    }
+
     &__price {
-        margin-top:auto ;
+        margin-top: auto;
         margin-left: auto;
         margin-right: 1rem;
         padding: 1rem;
@@ -132,6 +126,5 @@
     }
     &__icone {
         @include flex(row, center, center);
-    
     }
 }
