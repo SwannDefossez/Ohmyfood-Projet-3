@@ -25,6 +25,12 @@
         @include md {
             @include flex (row, space-around, center);
         }
+       
+        @include lg {
+            margin-left: 10%;
+            margin-right: 10%;
+            @include flex (row, space-between, center);
+        }
     }
 
     &__texte {
