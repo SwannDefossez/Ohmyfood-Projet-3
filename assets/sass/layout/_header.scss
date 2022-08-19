@@ -28,5 +28,9 @@
       width: 15%;
       margin-left: 40%;
     }
+
+    @include xl {
+      margin-left: 42%;
+    }
   }
 }
