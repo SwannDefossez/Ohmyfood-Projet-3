@@ -1,32 +1,32 @@
 @use "../utils/" as *;
 
-
 .header {
-    @include flex(row, flex-start, center);
-    height: 4rem;
-    &--margin {
-        margin-right: 7rem;
+  @include flex(row, flex-start, center);
+  height: 4rem;
+  &--margin {
+    margin-right: 7rem;
+  }
+  &__arrow {
+    margin-left: 5%;
+    &:hover > .fa-arrow-left {
+      color: lighten(#3d3d3d, 20%);
     }
-    &__arrow {
-        margin-left: 5%;
-        &:hover > .fa-arrow-left {
-            color: lighten(#3d3d3d , 20%);
-        }
-    }
+  }
 
-    &__logo {
-        display: block;
-        margin: auto;
-        width: 45%;
-        height: auto;
+  &__logo {
+    display: block;
+    width: 45%;
+    height: auto;
+    margin-left: 30%;
 
-        @include md {
-            width: 30%;
-        }
-
-        @include lg {
-            width: 15%;
-        }
+    @include md {
+      width: 30%;
+      margin-left: 35%;
     }
 
+    @include lg {
+      width: 15%;
+      margin-left: 40%;
+    }
+  }
 }
